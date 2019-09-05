@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id = "app"> 
+        <h2>{{title}}</h2>
+        <button @click = "title ='Doxy'">Update</button>
+        <button @click = 'doc'>Destroy</button>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                title:"!paraox"
+            },
+            beforeCreate:function(){
+                console.log("Before created");
+            },
+            created:function(){
+                console.log("created");
+            },
+            beforeMount:function(){
+                console.log("Brfore mount state");
+            },
+            mounted:function(){
+                console.log("mount state")
+            },
+            beforeUpdate:function(){
+                console.log("Before updated");
+            },
+            updated:function(){
+                console.log("updated State");
+            },
+            beforeDestroy:function(){
+                console.log("Before destroy");
+            },
+            destroyed:function(){
+                console.log("Destroyed");
+            },methods:{
+                doc:function(){
+                    this.$destroy();
+                }
+            }
+        })
+    
+    
+    </script>
+</body>
+</html>
